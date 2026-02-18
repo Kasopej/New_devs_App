@@ -24,7 +24,7 @@ services:
     ports:
       - "3000:80" # Mapping internal 80 (nginx) to 3000
     environment:
-      - VITE_API_URL=http://localhost:8000
+      - VITE_API_URL=https://refactored-zebra-qg9jqr6ww9gf674-8000.app.github.dev
     depends_on:
       - backend
 
