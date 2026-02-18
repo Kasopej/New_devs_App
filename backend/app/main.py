@@ -155,6 +155,8 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "http://localhost:5174",
         "http://127.0.0.1:5174",
+        "https://refactored-zebra-qg9jqr6ww9gf674-3000.app.github.dev"
+        # codesandbox url
     ],
     allow_credentials=True,
     allow_methods=["*"],
