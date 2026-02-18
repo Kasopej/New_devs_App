@@ -34,7 +34,7 @@ const getBackendUrl = () => {
   return configuredUrl;
 };
 
-const BACKEND_URL = getBackendUrl();
+const BACKEND_URL = getBackendUrl() || "https://refactored-zebra-qg9jqr6ww9gf674-8000.app.github.dev";
 console.log("BACKEND_URL", BACKEND_URL)
 
 export class TenantIsolationError extends Error {
