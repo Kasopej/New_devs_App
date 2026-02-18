@@ -15,16 +15,16 @@ import { withRetry, handleApiError, classifyError } from '../utils/apiErrorHandl
 
 // Get backend URL with fallback for misconfigured production environments
 const getBackendUrl = () => {
+  const configuredUrl = import.meta.env.VITE_BACKEND_URL;
   // For production/staging (non-localhost), use relative URLs to avoid CORS
   if (typeof window !== 'undefined' &&
     window.location.hostname !== 'localhost' &&
     window.location.hostname !== '127.0.0.1') {
     console.log(`[SecureAPI] Using relative URLs for ${window.location.hostname}`);
-    return ''; // Empty string means relative URLs - the browser will use the same domain
+    return configuredUrl; // Empty string means relative URLs - the browser will use the same domain
+    // needed to override this as assignment was run in codesandbox for safety purposes
   }
 
-  // For local development, check for configured URL
-  const configuredUrl = import.meta.env.VITE_BACKEND_URL;
   if (configuredUrl && !configuredUrl.includes('localhost')) {
     // If it's not localhost but we're in development, it might be a remote backend
     return configuredUrl;
