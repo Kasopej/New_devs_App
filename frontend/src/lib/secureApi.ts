@@ -22,7 +22,7 @@ const getBackendUrl = () => {
     window.location.hostname !== '127.0.0.1') {
     console.log(`[SecureAPI] Using relative URLs for ${window.location.hostname}`);
     return configuredUrl; // Empty string means relative URLs - the browser will use the same domain
-    // needed to override this as assignment was run in codesandbox for safety purposes
+    // needed to override this as assignment was run in codesandbox for safety purposes (cors can be solved by whitelist)
   }
 
   if (configuredUrl && !configuredUrl.includes('localhost')) {
