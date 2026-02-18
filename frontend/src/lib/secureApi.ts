@@ -31,10 +31,11 @@ const getBackendUrl = () => {
   }
 
   // Default to localhost for development
-  return configuredUrl || 'http://localhost:8000';
+  return configuredUrl;
 };
 
 const BACKEND_URL = getBackendUrl();
+console.log("BACKEND_URL", BACKEND_URL)
 
 export class TenantIsolationError extends Error {
   constructor(message: string) {
